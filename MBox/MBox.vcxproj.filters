@@ -51,5 +51,8 @@
     <QtRcc Include="MBox.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
+    <QtRcc Include="image.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
   </ItemGroup>
 </Project>

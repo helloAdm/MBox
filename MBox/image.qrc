@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>image/background/bg1.jpg</file>
+        <file>image/background/bg2.jpg</file>
+        <file>image/background/bg3.jpg</file>
+        <file>image/background/bg4.jpg</file>
+        <file>image/background/bg5.jpg</file>
+        <file>image/background/bg6.jpg</file>
+        <file>image/background/bg7.jpg</file>
+        <file>image/background/bg8.jpg</file>
+        <file>image/title.png</file>
+        <file>image/button/handle.png</file>
+        <file>image/button/add.png</file>
+        <file>image/button-hover/add-hover.png</file>
+        <file>image/button/face.png</file>
+        <file>image/button-hover/face-hover.png</file>
+        <file>image/button/setting.png</file>
+        <file>image/button-hover/setting-hover.png</file>
+        <file>image/button/tr.png</file>
+        <file>image/button/min.png</file>
+        <file>image/button/max.png</file>
+        <file>image/button/quit.png</file>
+    </qresource>
+</RCC>
