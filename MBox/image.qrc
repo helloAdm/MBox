@@ -20,5 +20,37 @@
         <file>image/button/min.png</file>
         <file>image/button/max.png</file>
         <file>image/button/quit.png</file>
+        <file>image/button/music.png</file>
+        <file>image/button-hover/music-hover.png</file>
+        <file>image/button/like.png</file>
+        <file>image/button-hover/like-hover.png</file>
+        <file>image/button/list.png</file>
+        <file>image/button-hover/list-hover.png</file>
+        <file>image/button/play-resently.png</file>
+        <file>image/button-hover/play-resently-hover.png</file>
+        <file>image/button/pre.png</file>
+        <file>image/button-hover/pre-hover.png</file>
+        <file>image/button/pase.png</file>
+        <file>image/button-hover/pase-hover.png</file>
+        <file>image/button/next.png</file>
+        <file>image/button-hover/next-hover.png</file>
+        <file>image/button/position.png</file>
+        <file>image/button-hover/position-hover.png</file>
+        <file>image/button/playlist.png</file>
+        <file>image/button-hover/playlist-hover.png</file>
+        <file>image/button/music-voice.png</file>
+        <file>image/button-hover/music-voice-hover.png</file>
+        <file>image/button/Ilike.png</file>
+        <file>image/button/Iliked.png</file>
+        <file>image/button-hover/Iliked-hover.png</file>
+        <file>image/button-hover/Ilike-hover.png</file>
+        <file>image/button/loop.png</file>
+        <file>image/button-hover/loop-hover.png</file>
+        <file>image/button/left.png</file>
+        <file>image/button/left-arrow.png</file>
+        <file>image/button-hover/left-arrow-hover.png</file>
+        <file>image/button-hover/left-hover.png</file>
+        <file>image/button/sereach.png</file>
+        <file>image/button-hover/sereach-hover.png</file>
     </qresource>
 </RCC>
