@@ -20,7 +20,7 @@ MBox::MBox(QWidget *parent)
 inline void MBox::init_list()
 {
 	int i = 0;
-	QDir dir("C:/Users/John/Desktop/musicPath");
+	QDir dir("F:/musicPath");
 
 	QStringList stringlist_song;
 	QFileInfoList fileinfolist;
