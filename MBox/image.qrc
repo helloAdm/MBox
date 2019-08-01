@@ -52,5 +52,7 @@
         <file>image/button-hover/left-hover.png</file>
         <file>image/button/sereach.png</file>
         <file>image/button-hover/sereach-hover.png</file>
+        <file>image/button/handle2.png</file>
+        <file>image/image/musicIcon.png</file>
     </qresource>
 </RCC>
