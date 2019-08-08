@@ -10,11 +10,13 @@ MBox::MBox(QWidget *parent)
 
 	ui.sereachEdit->setText(QStringLiteral("ÊäÈë¸èÊÖ»ò¸èÇú"));
 	ui.verticalSlider->hide();
-	
+	ui.horizontalSlider->setValue(0);
 	
 
 	init_list();
 	connect(ui.paseButton, SIGNAL(clicked()), this, SLOT(on_palyButton_clicked()));
+	connect(musicplayer, &QMediaPlayer::positionChanged, this, &MBox::updatePosition);
+	connect(musicplayer, &QMediaPlayer::durationChanged, this, &MBox::updateDuration);
 }
 
 inline void MBox::init_list()
@@ -30,7 +32,7 @@ inline void MBox::init_list()
 	stringlist_song << "*.mp3";
 	dir.setNameFilters(stringlist_song);
 	fileinfolist = dir.entryInfoList();
-	
+
 	while (i < fileinfolist.length())
 	{
 		fileinfo = fileinfolist.at(i);
@@ -54,15 +56,86 @@ inline void MBox::init_list()
 
 }
 
+inline QString MBox::PaseStyle()
+{
+	return 
+		"QPushButton{"
+			"background-image:url(:/image/image/image/pase.png);"
+			"background-repeat:no-repeat;"
+			"background-position:center center;"
+			"border:none;"
+		"}"
+
+		"QPushButton:hover{"
+			"background-repeat:no-repeat;"
+			"background-position:center center;"
+			"background-image:url(:/image/image/image-hover/pase-hover.png);"
+		"}"
+		
+		"QPushButton:pressed{"
+			"background-repeat:no-repeat;"
+			"background-position:center center;"
+			"background-image:url(:/image/image/image/pase.png);"
+		"}";
+}
+
+inline QString MBox::PlayStyle()
+{
+	return 
+		"QPushButton{"
+			"background-image:url(:/image/image/button/play.png);"
+			"background-repeat:no-repeat;"
+			"background-position:center center;"
+			"border:none;"
+		"}"
+
+		"QPushButton:hover{"
+			"background-repeat:no-repeat;"
+			"background-position:center center;"
+			"background-image:url(:/image/image/button-hover/play-hover.png);"
+		"}"
+		
+		"QPushButton:pressed{"
+			"background-repeat:no-repeat;"
+			"background-position:center center;"
+			"background-image:url(:/image/image/button/play.png);"
+		"}";
+}
+
+void MBox::updatePosition(qint64 position)
+{
+	ui.horizontalSlider->setValue(position);
+
+}
+
+void MBox::updateDuration(qint64 duration)
+{
+	ui.horizontalSlider->setRange(0, duration);
+	ui.horizontalSlider->setEnabled(duration>0);
+	ui.horizontalSlider->setPageStep(duration / 10);
+}
 
 void MBox::on_palyButton_clicked()
 {
-	musiclist->setPlaybackMode(QMediaPlaylist::Loop);
-	musicplayer->setPlaylist(musiclist);
-	musicplayer->play();
-	
+	if (ui.listWidget_6->count() == 0)
+	{
+		return;
+	}
 
-
+	if (musicplayer->state() == QMediaPlayer::PlayingState)
+	{
+		ui.paseButton->setIcon(QIcon(":/image/image/button/pase.png"));
+		ui.paseButton->setStyleSheet(PaseStyle());
+		musicplayer->pause();
+	}
+	else
+	{
+		ui.paseButton->setIcon(QIcon(":/image/image/button/play.png"));
+		ui.paseButton->setStyleSheet(PlayStyle());
+		musiclist->setPlaybackMode(QMediaPlaylist::Loop);
+		musicplayer->setPlaylist(musiclist);
+		musicplayer->play();
+	}
 }
 
 void MBox::on_musicVoiceButton_clicked()

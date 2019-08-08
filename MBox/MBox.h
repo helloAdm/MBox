@@ -13,8 +13,12 @@ public:
 	MBox(QWidget *parent = Q_NULLPTR);
 
 	inline void init_list();
+	inline QString PlayStyle();
+	inline QString PaseStyle();
 
 	
+	void updatePosition(qint64 position);
+	void updateDuration(qint64 duration);
 
 private:
 	Ui::MBoxClass ui;
