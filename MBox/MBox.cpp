@@ -14,9 +14,19 @@ MBox::MBox(QWidget *parent)
 	
 
 	init_list();
+
+	musiclist->setPlaybackMode(QMediaPlaylist::Loop);
+	musicplayer->setPlaylist(musiclist);
+
 	connect(ui.paseButton, SIGNAL(clicked()), this, SLOT(on_palyButton_clicked()));
-	connect(musicplayer, &QMediaPlayer::positionChanged, this, &MBox::updatePosition);
-	connect(musicplayer, &QMediaPlayer::durationChanged, this, &MBox::updateDuration);
+	
+	connect(musicplayer, SIGNAL(positionChanged(qint64)), this, SLOT(updatePosition(qint64)));
+	connect(musicplayer, SIGNAL(durationChanged(qint64)), this, SLOT(updateDuration(qint64)));
+	
+
+
+	/*connect(musicplayer, &QMediaPlayer::positionChanged, this, &MBox::updatePosition);
+	connect(musicplayer, &QMediaPlayer::durationChanged, this, &MBox::updateDuration);*/
 }
 
 inline void MBox::init_list()
@@ -115,6 +125,8 @@ void MBox::updateDuration(qint64 duration)
 	ui.horizontalSlider->setPageStep(duration / 10);
 }
 
+
+/***²¥·Å/ÔİÍ£°´Å¥***/
 void MBox::on_palyButton_clicked()
 {
 	if (ui.listWidget_6->count() == 0)
@@ -131,13 +143,12 @@ void MBox::on_palyButton_clicked()
 	else
 	{
 		ui.paseButton->setIcon(QIcon(":/image/image/button/play.png"));
-		ui.paseButton->setStyleSheet(PlayStyle());
-		musiclist->setPlaybackMode(QMediaPlaylist::Loop);
-		musicplayer->setPlaylist(musiclist);
+		ui.paseButton->setStyleSheet(PlayStyle());		
 		musicplayer->play();
 	}
 }
 
+/***ÉùÒô»¬¿é***/
 void MBox::on_musicVoiceButton_clicked()
 {
 	

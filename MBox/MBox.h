@@ -17,8 +17,7 @@ public:
 	inline QString PaseStyle();
 
 	
-	void updatePosition(qint64 position);
-	void updateDuration(qint64 duration);
+	
 
 private:
 	Ui::MBoxClass ui;
@@ -31,6 +30,8 @@ private:
 private slots:
 	//void on_quitButton_clicked();//¹Ø±Õ
 
+	void updatePosition(qint64 position);
+	void updateDuration(qint64 duration);
 	void on_palyButton_clicked();//²¥·Å°´Å¥
 	void on_musicVoiceButton_clicked();//Òþ²ØverticalSlider
 };
