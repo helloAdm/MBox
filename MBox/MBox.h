@@ -32,6 +32,7 @@ private slots:
 
 	void updatePosition(qint64 position);
 	void updateDuration(qint64 duration);
+	//qqq
 	void on_palyButton_clicked();//²¥·Å°´Å¥
 	void on_musicVoiceButton_clicked();//Òþ²ØverticalSlider
 };
